@@ -1,7 +1,7 @@
 {
   "name": "swip",
-  "version": "0.2.0",
-  "description": "SWIP — Shit With Prompting. Refactor messy prompts into Act-as role briefs.",
+  "version": "0.3.0",
+  "description": "SWIP — Shit With Prompting. Prompt refactor and git commit-message skills.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,10 +12,15 @@
     "skills",
     "agent-skills",
     "prompting",
+    "commit-message",
     "claude-code",
     "cursor",
     "opencode"
   ],
+  "scripts": {
+    "smoke": "bash scripts/smoke-test.sh",
+    "test": "bash scripts/smoke-test.sh"
+  },
   "files": [
     "skills/",
     ".claude-plugin/",
@@ -23,6 +28,7 @@
     ".opencode/",
     "docs/",
     "examples/",
+    "scripts/",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"

@@ -2,6 +2,13 @@
 
 Repo: [gstbdstudio/swip](https://github.com/gstbdstudio/swip)
 
+Skills in this pack:
+
+| Skill | Command |
+|-------|---------|
+| `swip` | `/swip`, `/swip light`, `/swip complex` |
+| `swip-commit` | `/swip-commit` |
+
 Three good paths: **plugin install** (Claude / Cursor), **`npx skills`** (any agent), or **ask your agent**.
 
 ---
@@ -65,23 +72,27 @@ Fetch and follow instructions from https://raw.githubusercontent.com/gstbdstudio
 Needs Node.js. Works for Claude Code, Cursor, OpenCode, and more.
 
 ```bash
-# Project install
+# Project install (both skills)
+npx skills add gstbdstudio/swip -y
+
+# Or pick one
 npx skills add gstbdstudio/swip --skill swip -y
+npx skills add gstbdstudio/swip --skill swip-commit -y
 
 # Global install
-npx skills add gstbdstudio/swip --skill swip -g -y
+npx skills add gstbdstudio/swip -g -y
 
 # Specific agents
-npx skills add gstbdstudio/swip --skill swip -a claude-code -a cursor -a opencode -y
+npx skills add gstbdstudio/swip -a claude-code -a cursor -a opencode -y
 
 # All detected agents
-npx skills add gstbdstudio/swip --skill swip -a '*' -y
+npx skills add gstbdstudio/swip -a '*' -y
 ```
 
 From a local clone:
 
 ```bash
-npx skills add /path/to/swip --skill swip -y
+npx skills add /path/to/swip -y
 ```
 
 List skills in the source:
@@ -90,7 +101,7 @@ List skills in the source:
 npx skills add gstbdstudio/swip -l
 ```
 
-**ID:** `npx skills add gstbdstudio/swip --skill swip -y`. Tambah `-g` untuk global.
+**ID:** `npx skills add gstbdstudio/swip -y` memasang seluruh pack. Tambah `-g` untuk global.
 
 ---
 
@@ -160,29 +171,38 @@ and install SWIP for OpenCode. Then tell me how to run /swip.
 | **Cursor** | `.cursor/skills/swip/SKILL.md` | `~/.cursor/skills/swip/SKILL.md` |
 | **OpenCode** | `.opencode/skills/swip/SKILL.md` (also `.claude/skills/`, `.agents/skills/`) | `~/.config/opencode/skills/swip/SKILL.md` |
 
-Canonical source in this repo: `skills/swip/SKILL.md`.
+Canonical sources in this repo:
 
-After install, start a **new session** and run `/swip`.
+- `skills/swip/SKILL.md`
+- `skills/swip-commit/SKILL.md`
+
+After install, start a **new session** and run `/swip` or `/swip-commit`.
 
 ---
 
 ## Manual copy (fallback)
 
 ```bash
-# Claude Code (project)
-mkdir -p .claude/skills && cp -r <repo>/skills/swip .claude/skills/swip
+# Claude Code (project) — copy whole skills tree
+mkdir -p .claude/skills
+cp -r <repo>/skills/swip <repo>/skills/swip-commit .claude/skills/
 
 # Cursor (project)
-mkdir -p .cursor/skills && cp -r <repo>/skills/swip .cursor/skills/swip
+mkdir -p .cursor/skills
+cp -r <repo>/skills/swip <repo>/skills/swip-commit .cursor/skills/
 
 # OpenCode (project)
-mkdir -p .opencode/skills && cp -r <repo>/skills/swip .opencode/skills/swip
+mkdir -p .opencode/skills
+cp -r <repo>/skills/swip <repo>/skills/swip-commit .opencode/skills/
 ```
 
 Symlink:
 
 ```bash
 ln -s <repo>/skills/swip ~/.claude/skills/swip
+ln -s <repo>/skills/swip-commit ~/.claude/skills/swip-commit
 ln -s <repo>/skills/swip ~/.cursor/skills/swip
+ln -s <repo>/skills/swip-commit ~/.cursor/skills/swip-commit
 ln -s <repo>/skills/swip ~/.config/opencode/skills/swip
+ln -s <repo>/skills/swip-commit ~/.config/opencode/skills/swip-commit
 ```

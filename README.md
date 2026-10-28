@@ -2,6 +2,12 @@
 
 > I'm shit with prompting. This skill exists so I don't have to pretend otherwise.
 
+[![Smoke](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml/badge.svg)](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](CHANGELOG.md)
+[![Skills](https://img.shields.io/badge/skills-2-informational.svg)](skills/)
+[![npx skills](https://img.shields.io/badge/npx_skills-gstbdstudio%2Fswip-black.svg)](https://github.com/gstbdstudio/swip)
+
 [Install](docs/install.md) · [Examples](examples/) · [Changelog](CHANGELOG.md) · [License](LICENSE)
 
 ---
@@ -18,9 +24,14 @@
 
 **EN:** I am bad at writing prompts and lazy about structuring them. I know a good brief needs role, goal, context, constraints, and done-when. I still type “benerin ini” and hope for the best.
 
-**SWIP** takes that mess, picks a fitting **Act as** role, rewrites a clean brief, waits for confirmation, then runs the work in the same session.
+**SWIP** is a small skill pack:
 
-**ID:** Saya payah dan malas menyusun prompt. SWIP merapikan permintaan berantakan jadi brief ber-role, minta konfirmasi, lalu mengerjakan di sesi yang sama.
+| Skill | Command | Job |
+|-------|---------|-----|
+| **swip** | `/swip` · `/swip light` · `/swip complex` | Rewrite messy prompts into Act-as briefs, confirm, then execute |
+| **swip-commit** | `/swip-commit` | Draft a commit message from current git changes (warns if no git) |
+
+**ID:** Saya payah dan malas menyusun prompt — dan sering males nulis commit message juga. SWIP bantu dua-duanya.
 
 ---
 
@@ -29,7 +40,7 @@
 **Universal (any agent):**
 
 ```bash
-npx skills add gstbdstudio/swip --skill swip -y
+npx skills add gstbdstudio/swip -y
 ```
 
 **Claude Code (plugin):**
@@ -39,22 +50,21 @@ npx skills add gstbdstudio/swip --skill swip -y
 /plugin install swip@swip
 ```
 
-**OpenCode:** follow [.opencode/INSTALL.md](.opencode/INSTALL.md) or paste that URL into the agent.
+**OpenCode:** [.opencode/INSTALL.md](.opencode/INSTALL.md)
 
 Then:
 
 | Command | What you get |
 |---------|----------------|
-| `/swip` or `/swip light` | Short rewrite (default) |
-| `/swip complex` | Full detailed rewrite |
+| `/swip` or `/swip light` | Short prompt rewrite (default) |
+| `/swip complex` | Full detailed prompt rewrite |
+| `/swip-commit` | Commit message from current git diff |
 
-Or say: “rewrite my prompt” / “rapihkan promptku” / “I’m shit with prompting”.
-
-Full paths for Claude Code, Cursor, OpenCode, agent prompts, manual copy: **[docs/install.md](docs/install.md)**.
+Full install paths: **[docs/install.md](docs/install.md)**.
 
 ---
 
-## How it works / Cara kerja
+## `/swip` — how it works
 
 1. Capture the messy prompt  
 2. Ask 1–3 clarifying questions only if needed  
@@ -65,59 +75,34 @@ Full paths for Claude Code, Cursor, OpenCode, agent prompts, manual copy: **[doc
 
 Language of the rewrite follows your input (ID ↔ ID, EN ↔ EN).
 
+### Light example
+
+**Before:** `design ulang ui dashboardnya biar lebih bagus`
+
+**After:** Act as UI/UX designer → clear goal + done-when. See [examples/light.md](examples/light.md).
+
+### Complex example
+
+**Before:** `benerin authnya yang sering error pas login, jangan rusak yang lain`
+
+**After:** full Role / Goal / Context / Constraints / Done-when. See [examples/complex.md](examples/complex.md).
+
 ---
 
-## Examples / Contoh
+## `/swip-commit` — commit message from changes
 
-### Light — before
+For when the code is already changed and you don't want to invent a commit message.
 
-```text
-design ulang ui dashboardnya biar lebih bagus
-```
+1. Check git exists → if not, **stop** and say this project has no git  
+2. Read `git status` + diffs (prefer staged)  
+3. Draft a Conventional Commits-style message  
+4. Confirm → then commit (no push unless asked)
 
-### Light — after
+See [examples/swip-commit.md](examples/swip-commit.md).
 
-```markdown
-**Role:** Act as a UI/UX designer for web dashboards.
+**No git:**
 
-**Goal:** Redesign the dashboard UI so it looks clearer and more polished.
-
-**Context:** Existing web app dashboard; improve visual hierarchy and usability without a full product rethink.
-
-**Done when:**
-- Layout and key screens feel cleaner and easier to scan
-- Changes stay within the current product scope
-```
-
-### Complex — before
-
-```text
-benerin authnya yang sering error pas login, jangan rusak yang lain
-```
-
-### Complex — after
-
-```markdown
-**Role:** Act as a senior backend engineer focused on authentication and session security.
-
-**Goal:** Fix intermittent login failures so users can sign in reliably, without regressing other auth flows.
-
-**Context:**
-- Login sometimes fails (timing / race / token refresh unclear)
-- Related surfaces: signup, logout, password reset, session refresh
-
-**Constraints:**
-- Do not rewrite the whole auth system
-- Prefer root-cause fix over symptom patching
-- Add or update tests for the failure path
-
-**Done when:**
-- Failure is fixed with a clear root cause
-- Login succeeds consistently in the failing scenario
-- Adjacent auth flows still work
-```
-
-More: [examples/light.md](examples/light.md) · [examples/complex.md](examples/complex.md)
+> Project ini bukan git repository (tidak ada `.git`). `/swip-commit` butuh git.
 
 ---
 
@@ -125,10 +110,14 @@ More: [examples/light.md](examples/light.md) · [examples/complex.md](examples/c
 
 ```
 swip/
-├── skills/swip/SKILL.md     # canonical skill (agents load this)
-├── .claude-plugin/          # Claude Code plugin + marketplace
+├── skills/
+│   ├── swip/SKILL.md
+│   └── swip-commit/SKILL.md
+├── .claude-plugin/          # Claude Code plugin + marketplace + icon
 ├── .cursor-plugin/          # Cursor plugin manifest
-├── .opencode/INSTALL.md     # OpenCode install notes
+├── .opencode/INSTALL.md
+├── .github/workflows/smoke.yml
+├── scripts/smoke-test.sh
 ├── docs/install.md
 ├── examples/
 ├── package.json
@@ -137,7 +126,15 @@ swip/
 └── CHANGELOG.md
 ```
 
-Same idea as larger skill frameworks: **one skills tree**, thin per-agent adapters.
+One skills tree, thin per-agent adapters, small CI smoke suite.
+
+### Local smoke test
+
+```bash
+npm test
+# or
+bash scripts/smoke-test.sh
+```
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "name": "swip",
-  "description": "SWIP — Shit With Prompting. One skill that rewrites messy prompts into role-based briefs.",
+  "description": "SWIP — Shit With Prompting. Prompt refactor + commit message skills.",
   "owner": {
     "name": "gstbdstudio",
     "url": "https://github.com/gstbdstudio"
@@ -8,8 +8,8 @@
   "plugins": [
     {
       "name": "swip",
-      "description": "Refactor messy prompts into clean Act-as role briefs, confirm, then execute.",
-      "version": "0.2.0",
+      "description": "Prompt refactor (/swip) and commit-message drafts from git diffs (/swip-commit).",
+      "version": "0.3.0",
       "source": "./",
       "author": {
         "name": "gstbdstudio",

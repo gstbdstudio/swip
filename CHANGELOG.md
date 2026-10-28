@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-03-26
+
+- Add **`swip-commit`** skill (`/swip-commit`): draft commit messages from current diffs
+- Hard gate when the project is not a git repository (clear EN/ID notice, then stop)
+- Add `scripts/smoke-test.sh` (frontmatter + manifest checks; optional `claude plugin validate`)
+- Add GitHub Actions smoke workflow + README badges
+- Bump pack to two skills under `skills/`
+
 ## 0.2.0 — 2026-03-26
 
 - Move canonical skill to `skills/swip/SKILL.md` (plugin-friendly layout)

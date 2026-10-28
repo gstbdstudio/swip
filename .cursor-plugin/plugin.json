@@ -1,8 +1,8 @@
 {
   "name": "swip",
   "displayName": "SWIP — Shit With Prompting",
-  "description": "Refactor messy prompts into clean Act-as role briefs, confirm, then execute. Modes: light and complex.",
-  "version": "0.2.0",
+  "description": "Prompt refactor (/swip) and commit-message drafts from git diffs (/swip-commit).",
+  "version": "0.3.0",
   "author": {
     "name": "gstbdstudio",
     "url": "https://github.com/gstbdstudio"
@@ -15,7 +15,9 @@
     "prompting",
     "prompt-engineering",
     "act-as",
-    "rewrite"
+    "rewrite",
+    "commit",
+    "git"
   ],
   "skills": "./skills/"
 }
