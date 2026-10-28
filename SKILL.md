@@ -1,12 +1,10 @@
 ---
 name: swip
 description: >
-  Refactor messy user prompts into a clean, role-based brief (Act as …), then
-  wait for confirmation before executing. Use when the user runs /swip,
-  /swip light, /swip complex, says they are bad at prompting, asks to rewrite
-  or structure a prompt, or pastes a vague request and wants it whipped into
-  shape. Modes: light (short rewrite) or complex (full detailed rewrite).
-  Default mode is light.
+  Refactor a messy prompt into a clean Act-as role brief, confirm, then execute.
+  Triggers: /swip, /swip light, /swip complex, "rewrite my prompt", "rapihkan
+  prompt", "I'm shit with prompting", vague lazy requests. Modes: light
+  (default, short) or complex (full Role/Goal/Context/Constraints/Done-when).
 ---
 
 # SWIP — Shit With Prompting
