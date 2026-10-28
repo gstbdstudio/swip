@@ -2,7 +2,7 @@
 
 > I'm shit with prompting. This skill exists so I don't have to pretend otherwise.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/skills-3-informational.svg)](skills/)
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-portable-success.svg)](docs/agents.md)
