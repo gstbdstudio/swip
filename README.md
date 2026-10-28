@@ -4,7 +4,7 @@
 
 [![Smoke](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml/badge.svg)](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/skills-3-informational.svg)](skills/)
 [![npx skills](https://img.shields.io/badge/npx_skills-gstbdstudio%2Fswip-black.svg)](https://github.com/gstbdstudio/swip)
 
@@ -30,7 +30,7 @@
 |-------|---------|-----|
 | **swip** | `/swip` · `/swip light` · `/swip complex` | Rewrite messy prompts into Act-as briefs, confirm, then execute |
 | **swip-commit** | `/swip-commit` | Draft a commit message from current git changes (warns if no git) |
-| **swip-sec** | `/swip-sec` | Security assessment for web and/or mobile apps (checklist + prioritized fixes) |
+| **swip-sec** | `/swip-sec` · `/swip-sec quick` · `/swip-sec standard` | Security assessment for web/mobile; writes `SECURITY-REPORT.md` |
 
 **ID:** Saya payah dan malas menyusun prompt — plus males nulis commit message dan males audit keamanan. SWIP bantu tiga-tiganya.
 
@@ -60,7 +60,8 @@ Then:
 | `/swip` or `/swip light` | Short prompt rewrite (default) |
 | `/swip complex` | Full detailed prompt rewrite |
 | `/swip-commit` | Commit message from current git diff |
-| `/swip-sec` | Security assessment (web + mobile auto-detect) |
+| `/swip-sec` or `/swip-sec standard` | Fuller security assessment + `SECURITY-REPORT.md` |
+| `/swip-sec quick` | Fast security pass + `SECURITY-REPORT.md` |
 
 Full install paths: **[docs/install.md](docs/install.md)**.
 
@@ -112,12 +113,18 @@ See [examples/swip-commit.md](examples/swip-commit.md).
 
 Defensive review of the **current project** (web and/or mobile):
 
-1. Auto-detect stack and surfaces  
-2. Run practical checklists (auth, access control, secrets, mobile storage/TLS, …)  
-3. Report prioritized findings with evidence + remediation  
-4. Offer to fix **critical/high** only after you confirm  
+1. Pick mode: **standard** (default) or **quick**  
+2. Auto-detect stack and surfaces  
+3. Run practical checklists (narrower set in quick mode)  
+4. Show prioritized findings **and write `SECURITY-REPORT.md`** at the project root  
+5. Offer to fix **critical/high** only after you confirm  
 
-No live exploitation. Not a substitute for a full professional pentest.
+| Mode | When |
+|------|------|
+| `/swip-sec` / `standard` | Fuller pass for detected surfaces |
+| `/swip-sec quick` | Fast pass: secrets, auth, access control, mobile storage/TLS |
+
+No live exploitation. Not a substitute for a full professional pentest. Add `SECURITY-REPORT.md` to `.gitignore` if you do not want it committed.
 
 See [examples/swip-sec.md](examples/swip-sec.md).
 

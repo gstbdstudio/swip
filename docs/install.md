@@ -8,7 +8,7 @@ Skills in this pack:
 |-------|---------|
 | `swip` | `/swip`, `/swip light`, `/swip complex` |
 | `swip-commit` | `/swip-commit` |
-| `swip-sec` | `/swip-sec` |
+| `swip-sec` | `/swip-sec`, `/swip-sec quick`, `/swip-sec standard` |
 
 Three good paths: **plugin install** (Claude / Cursor), **`npx skills`** (any agent), or **ask your agent**.
 

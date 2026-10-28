@@ -2,6 +2,17 @@
 
 Use only the sections that match the asset map. This is a practical review aid, not a claim of full OWASP coverage.
 
+## Quick focus (for `/swip-sec quick`)
+
+Prioritize these only; park other gaps under a short hardening backlog:
+
+1. Secrets in repo / hardcoded client API keys with privilege
+2. Auth & session weaknesses (cookies/tokens, reset, logout)
+3. Broken access control / IDOR on sensitive reads/writes
+4. Obvious injection sinks (SQL/command/XSS) on user input paths
+5. Mobile: cleartext HTTP for auth/PII; tokens in plain storage
+6. Android exported components / loose FileProvider; iOS ATS exceptions for auth hosts
+
 ## Web app / HTTP API
 
 ### Auth & session

@@ -3,22 +3,41 @@ name: swip-sec
 description: >
   Security assessment for the user's project (web app and/or mobile app):
   auto-detect stack, run a defensive checklist, report prioritized findings
-  with remediation, then offer to fix high/critical items after confirmation.
-  Use when the user runs /swip-sec, asks for a security assessment, security
-  audit, security review, "cek keamanan", "audit keamanan", OWASP-style review,
-  or wants web/mobile app hardening advice. Defensive and source-first only —
-  no active exploitation of live systems.
+  with remediation, write SECURITY-REPORT.md, then offer to fix high/critical
+  items after confirmation. Use when the user runs /swip-sec, /swip-sec quick,
+  /swip-sec standard, asks for a security assessment, security audit, security
+  review, "cek keamanan", "audit keamanan", OWASP-style review, or web/mobile
+  hardening advice. Modes: quick (fast pass) or standard (default, fuller
+  checklist). Defensive and source-first only — no active exploitation of live
+  systems.
 ---
 
 # SWIP Sec — project security assessment
 
 Help lazy builders get a useful security read on their **web** and/or **mobile** app without a full pentest circus. Stay casual in chat. Keep the **report** clear and serious.
 
+## Modes
+
+| Mode | Invoke | Depth |
+|------|--------|--------|
+| **standard** (default) | `/swip-sec`, `/swip-sec standard` | Full relevant checklists + evidence for detected surfaces |
+| **quick** | `/swip-sec quick`, or user says “cepat” / “quick” | Fast pass: secrets, auth/session, access control (IDOR-ish), mobile insecure storage/cleartext — top risks only |
+
+If the user does not name a mode, use **standard**.
+
+**Quick rules:**
+
+- Cap chat findings detail; still be accurate
+- Prefer critical/high candidates; fold obvious lows into a short “hardening backlog” bullet list
+- Still write `SECURITY-REPORT.md` (mark `Mode: quick`)
+- Say explicitly that quick is partial coverage
+
 ## Scope (what this skill is)
 
 - Source/config review of the **current project**
 - Auto-detect relevant surfaces (web, API, Android, iOS, Flutter, React Native, etc.)
 - Prioritized findings + concrete remediation suggestions
+- Persist report to **`SECURITY-REPORT.md`** at the assessment target root
 - Optional fixes **only after** the user confirms
 
 ## Out of scope (what this skill is not)
@@ -34,11 +53,10 @@ If the user asks for live pentest / exploit proof, say this skill is assessment-
 
 ### 1. Capture intent
 
-Confirm (briefly, only if unclear):
+Note the mode (**quick** | **standard**). Confirm only if unclear:
 
 - Target path (default: current workspace root)
 - Focus: whole project vs named area (auth, payments, admin, …)
-- Depth: default **standard** (checklist + evidence). If they say “cepat” / quick → lighter pass.
 
 ### 2. Recon — auto-detect stack
 
@@ -61,11 +79,11 @@ Build a short **Asset map**:
 
 If almost nothing is detectable, ask 1–3 questions, then continue with what you have.
 
-Load checklist details from [references/checklists.md](references/checklists.md) for the surfaces you found.
+Load checklist details from [references/checklists.md](references/checklists.md) for the surfaces you found. In **quick** mode, prioritize the “Quick focus” subset in that file (or equivalent: secrets, auth, access control, mobile storage/TLS).
 
 ### 3. Assess (defensive)
 
-For each relevant surface, check the items in the reference checklist. Prefer **evidence**:
+For each relevant surface, check the items appropriate to the mode. Prefer **evidence**:
 
 - File paths + short snippets / config keys
 - Missing controls that the code/config should have
@@ -85,13 +103,22 @@ Also keep a **Needs validation** list for things that depend on deploy/runtime y
 
 **Do not** run attacks against remote hosts. Local static review and reading configs/tests is enough for this skill.
 
-### 4. Report
+### 4. Report (chat + file)
 
-Present a single report in the user’s language (follow their input language):
+Present the report in the user’s language (follow their input language), then **write the same content** to:
+
+```text
+<target-root>/SECURITY-REPORT.md
+```
+
+If `SECURITY-REPORT.md` already exists, overwrite it with this run’s report (mention that in chat). Do not commit the file unless the user asks.
+
+Report template:
 
 ```markdown
 # Security assessment — <project>
 
+**Mode:** quick | standard
 **Scope:** …
 **Stack detected:** …
 **Date/ref:** <commit or “dirty worktree”>
@@ -111,9 +138,14 @@ Present a single report in the user’s language (follow their input language):
 
 ## Positive notes
 - What already looks solid (short)
+
+## Coverage note
+- For **quick**: state that this was a fast pass and recommend `/swip-sec standard` for fuller coverage.
 ```
 
 Keep findings honest. Missing a best practice ≠ critical vulnerability.
+
+After writing the file, tell the user the path: `SECURITY-REPORT.md`.
 
 ### 5. Offer fixes (do not jump ahead)
 
@@ -121,16 +153,17 @@ After the report, ask what to do next:
 
 1. Fix **critical/high** items now (recommended if any exist)
 2. Fix a named finding only
-3. Stop at the report
+3. Stop at the report (file already saved)
 
-**Do not modify code until they confirm.** When fixing:
+**Do not modify application code until they confirm.** When fixing:
 
 - Prefer the smallest effective change at the trust boundary
 - Add/adjust tests when practical
 - Re-check the finding after the change
+- Optionally append a short “Remediation log” section to `SECURITY-REPORT.md` for fixed items
 - Do not silently expand into unrelated refactors
 
 ## Tone
 
 - Chat: SWIP-casual, short, no fear-mongering
-- Report: calm, evidence-first, actionable
+- Report / `SECURITY-REPORT.md`: calm, evidence-first, actionable

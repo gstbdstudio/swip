@@ -1,6 +1,6 @@
 # Installing SWIP for OpenCode
 
-Skills: `/swip` (prompt rewrite), `/swip-commit` (commit message), `/swip-sec` (security assessment).
+Skills: `/swip` (prompt rewrite), `/swip-commit` (commit message), `/swip-sec` / `/swip-sec quick` (security assessment → `SECURITY-REPORT.md`).
 
 ## Recommended — `npx skills`
 

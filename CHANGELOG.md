@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 — 2026-03-26
+
+- `/swip-sec` modes: **quick** (fast pass) and **standard** (default, fuller checklist)
+- Always write assessment output to project-root **`SECURITY-REPORT.md`**
+- Quick-focus subset documented in `skills/swip-sec/references/checklists.md`
+
 ## 0.4.0 — 2026-03-26
 
 - Add **`swip-sec`** skill (`/swip-sec`): security assessment for web and/or mobile apps
