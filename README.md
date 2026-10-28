@@ -16,7 +16,7 @@
 
 **EN:** Sorry — this README was also written with AI, because I was too lazy to write it myself. That is literally the point of this skill.
 
-**ID:** Maaf — README ini juga dibuat pakai AI, karena saya malas nulis sendiri. Itu juga alasan skill ini ada.
+**ID:** Maaf — README ini juga dibuat pakai AI, karena gue malas nulis sendiri. Itu juga alasan skill ini ada.
 
 ---
 
@@ -32,7 +32,7 @@
 | **swip-commit** | `/swip-commit` | Draft a commit message from current git changes (warns if no git) |
 | **swip-sec** | `/swip-sec` · `/swip-sec quick` · `/swip-sec standard` | Security assessment for web/mobile; writes `SECURITY-REPORT.md` |
 
-**ID:** Saya payah dan malas menyusun prompt — plus males nulis commit message dan males audit keamanan. SWIP bantu tiga-tiganya.
+**ID:** Gue payah dan malas menyusun prompt — plus males nulis commit message dan males audit keamanan. SWIP bantu tiga-tiganya.
 
 ---
 
@@ -189,7 +189,7 @@ npx skills add gstbdstudio/swip --all
 
 **EN:** SWIP skills are instruction files your coding agent may follow with normal tool access. A compromised repo, fake fork, or blind update could tell the agent to leak secrets or skip safety confirmations. Install only from the official repo, skim `skills/*/SKILL.md` after install/update, and refuse surprising actions (outbound secret sends, `curl | bash`, commits without asking).
 
-**ID:** Skill SWIP adalah instruksi yang bisa diikuti agent dengan akses tool biasa. Repo palsu, fork mencurigakan, atau update buta bisa menyuruh agent membocorkan secret atau melewatkan konfirmasi. Pasang hanya dari repo resmi, baca `skills/*/SKILL.md` setelah install/update, dan tolak aksi aneh.
+**ID:** Skill SWIP itu instruksi yang bisa diikutin agent dengan akses tool biasa. Repo palsu, fork aneh, atau update buta bisa nyuruh agent bocorin secret atau lewatin konfirmasi. Pasang cuma dari repo resmi, baca `skills/*/SKILL.md` abis install/update, dan tolak aksi aneh.
 
 Maintainer checklist: GitHub **2FA**, protect branch `main`, never commit tokens.
 

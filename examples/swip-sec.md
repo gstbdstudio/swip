@@ -45,7 +45,7 @@ Same flow, narrower checklist. Report header includes `Mode: quick` and a covera
 ```text
 Laporan tersimpan di SECURITY-REPORT.md
 
-Mau saya perbaiki temuan critical/high sekarang?
+Mau gue perbaiki temuan critical/high sekarang?
 1) Ya, fix critical/high
 2) Fix temuan tertentu saja
 3) Cukup laporan

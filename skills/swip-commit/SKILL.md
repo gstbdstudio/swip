@@ -12,6 +12,8 @@ description: >
 
 Help lazy humans turn a dirty tree into a decent commit message. Stay casual in chat. Keep the **commit message itself** clear and professional.
 
+When chatting in Indonesian, use **gue** for first person — never **saya** or **aku**.
+
 ## Hard gate: git must exist
 
 Before anything else, check that this project is a git repository:
@@ -92,4 +94,5 @@ Do **not** run `git commit` until the user clearly confirms (e.g. OK / commit / 
 ## Tone
 
 - Chat: SWIP-casual, short, no lecture
+- Indonesian chat: **gue** (not saya/aku)
 - Commit message: sober and reusable in `git log`

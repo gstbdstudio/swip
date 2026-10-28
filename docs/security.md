@@ -63,4 +63,4 @@ If you believe this repo or a distributed copy is compromised or malicious:
 
 ## ID (ringkas)
 
-Skill ini bisa disalahgunakan jika sumber install-nya palsu atau akun/repo resmi dibajak, lalu agent mengikuti instruksi jahat. Pasang hanya dari `gstbdstudio/swip`, baca `SKILL.md` setelah update, dan tolak aksi aneh. Maintainer: jaga 2FA dan proteksi branch `main`.
+Skill ini bisa disalahgunakan kalau sumber install-nya palsu atau akun/repo resmi dibajak, lalu agent nurutin instruksi jahat. Pasang cuma dari `gstbdstudio/swip`, baca `SKILL.md` abis update, dan tolak aksi aneh. Maintainer: jaga 2FA sama proteksi branch `main`.

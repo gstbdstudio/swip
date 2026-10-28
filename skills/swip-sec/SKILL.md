@@ -16,6 +16,8 @@ description: >
 
 Help lazy builders get a useful security read on their **web** and/or **mobile** app without a full pentest circus. Stay casual in chat. Keep the **report** clear and serious.
 
+When chatting in Indonesian, use **gue** for first person — never **saya** or **aku**.
+
 ## Modes
 
 | Mode | Invoke | Depth |
@@ -166,4 +168,5 @@ After the report, ask what to do next:
 ## Tone
 
 - Chat: SWIP-casual, short, no fear-mongering
-- Report / `SECURITY-REPORT.md`: calm, evidence-first, actionable
+- Indonesian chat: **gue** (not saya/aku)
+- Report / `SECURITY-REPORT.md`: calm, evidence-first, actionable (report body need not force “gue”)

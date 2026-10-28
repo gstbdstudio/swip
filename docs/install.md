@@ -79,7 +79,7 @@ and skills/swip-sec into that agent's skills directory (see docs/agents.md).
 ### Indonesia
 
 ```text
-Tolong install pack skill SWIP ke semua coding agent di mesin ini.
+Tolong install pack skill SWIP ke semua coding agent di mesin gue.
 
 Jalankan:
 npx skills add gstbdstudio/swip --all
@@ -90,7 +90,7 @@ npx skills add gstbdstudio/swip -a '*' -y
 Lalu konfirmasi agent mana saja yang dapat: swip, swip-commit, swip-sec,
 dan kasih tahu cara menjalankan /swip, /swip-commit, dan /swip-sec.
 
-Kalau CLI tidak mengenal agent saya, copy skills/swip, skills/swip-commit,
+Kalau CLI tidak mengenal agent gue, copy skills/swip, skills/swip-commit,
 dan skills/swip-sec ke folder skills agent tersebut (lihat docs/agents.md).
 ```
 
