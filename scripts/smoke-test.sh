@@ -61,6 +61,8 @@ json_files=(
   .claude-plugin/plugin.json
   .claude-plugin/marketplace.json
   .cursor-plugin/plugin.json
+  .codex-plugin/plugin.json
+  .agents/plugins/marketplace.json
   package.json
 )
 
@@ -92,8 +94,19 @@ if not mp.get("plugins"):
 cursor = json.loads((root / ".cursor-plugin/plugin.json").read_text())
 if cursor.get("skills") != "./skills/":
     raise SystemExit(f"cursor skills={cursor.get('skills')!r}")
+codex = json.loads((root / ".codex-plugin/plugin.json").read_text())
+if codex.get("skills") != "./skills/":
+    raise SystemExit(f"codex skills={codex.get('skills')!r}")
+agents_mp = json.loads((root / ".agents/plugins/marketplace.json").read_text())
+if not agents_mp.get("plugins"):
+    raise SystemExit("agents marketplace plugins empty")
 pkg = json.loads((root / "package.json").read_text())
-versions = {plugin["version"], cursor.get("version"), pkg.get("version")}
+versions = {
+    plugin["version"],
+    cursor.get("version"),
+    codex.get("version"),
+    pkg.get("version"),
+}
 versions.discard(None)
 if len(versions) != 1:
     raise SystemExit(f"version mismatch: {sorted(versions)}")

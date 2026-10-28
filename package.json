@@ -1,7 +1,7 @@
 {
   "name": "swip",
-  "version": "0.5.0",
-  "description": "SWIP \u2014 Shit With Prompting. Prompt rewrite, commit messages, and security assessment (/swip-sec).",
+  "version": "0.6.0",
+  "description": "SWIP \u2014 Shit With Prompting. Portable Agent Skills for any coding agent.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
     "skills/",
     ".claude-plugin/",
     ".cursor-plugin/",
+    ".codex-plugin/",
+    ".agents/",
     ".opencode/",
     "docs/",
     "examples/",

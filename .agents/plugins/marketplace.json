@@ -1,0 +1,20 @@
+{
+  "name": "swip",
+  "interface": {
+    "displayName": "SWIP"
+  },
+  "plugins": [
+    {
+      "name": "swip",
+      "source": {
+        "source": "url",
+        "url": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

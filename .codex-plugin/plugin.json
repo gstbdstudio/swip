@@ -1,0 +1,37 @@
+{
+  "name": "swip",
+  "version": "0.6.0",
+  "description": "SWIP — prompt rewrite, commit messages, and security assessment for any Agent Skills-compatible coding agent.",
+  "author": {
+    "name": "gstbdstudio",
+    "url": "https://github.com/gstbdstudio"
+  },
+  "homepage": "https://github.com/gstbdstudio/swip",
+  "repository": "https://github.com/gstbdstudio/swip",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "prompting",
+    "commit",
+    "security",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "hooks": {},
+  "interface": {
+    "displayName": "SWIP — Shit With Prompting",
+    "shortDescription": "Prompt rewrite, commit messages, and security assessment skills",
+    "longDescription": "Use SWIP to rewrite messy prompts into Act-as briefs (/swip), draft commit messages from git diffs (/swip-commit), and run defensive web/mobile security assessments (/swip-sec).",
+    "developerName": "gstbdstudio",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "/swip",
+      "/swip-commit",
+      "/swip-sec quick"
+    ],
+    "websiteURL": "https://github.com/gstbdstudio/swip",
+    "brandColor": "#F59E0B",
+    "logo": "./.claude-plugin/icon.png"
+  }
+}

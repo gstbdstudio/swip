@@ -1,8 +1,14 @@
 # Installing SWIP for OpenCode
 
-Skills: `/swip` (prompt rewrite), `/swip-commit` (commit message), `/swip-sec` / `/swip-sec quick` (security assessment → `SECURITY-REPORT.md`).
+SWIP is a portable **Agent Skills** pack. OpenCode is one of many supported agents.
 
-## Recommended — `npx skills`
+Prefer installing to **all** agents on the machine (including OpenCode):
+
+```bash
+npx skills add gstbdstudio/swip --all
+```
+
+OpenCode-only:
 
 ```bash
 npx skills add gstbdstudio/swip -a opencode -y
@@ -11,19 +17,17 @@ npx skills add gstbdstudio/swip -a opencode -y
 Global:
 
 ```bash
-npx skills add gstbdstudio/swip -g -a opencode -y
+npx skills add gstbdstudio/swip -g --all
 ```
 
-Restart OpenCode (or start a new session), then run `/swip`, `/swip-commit`, or `/swip-sec`.
+Restart OpenCode (new session), then run `/swip`, `/swip-commit`, or `/swip-sec`.
 
 ## Ask OpenCode to install it
 
-Paste:
-
 ```text
-Install the SWIP skill pack with:
-npx skills add gstbdstudio/swip -a opencode -y
-Then confirm OpenCode can see swip, swip-commit, and swip-sec, and tell me how to run them.
+Install the SWIP skill pack for every coding agent on this machine with:
+npx skills add gstbdstudio/swip --all
+Confirm OpenCode can see swip, swip-commit, and swip-sec.
 ```
 
 ## Manual copy
@@ -34,17 +38,4 @@ git clone https://github.com/gstbdstudio/swip.git /tmp/swip
 cp -r /tmp/swip/skills/swip /tmp/swip/skills/swip-commit /tmp/swip/skills/swip-sec .opencode/skills/
 ```
 
-Or symlink if you develop locally:
-
-```bash
-mkdir -p .opencode/skills
-ln -s /path/to/swip/skills/swip .opencode/skills/swip
-ln -s /path/to/swip/skills/swip-commit .opencode/skills/swip-commit
-ln -s /path/to/swip/skills/swip-sec .opencode/skills/swip-sec
-```
-
-OpenCode also discovers `.claude/skills/` and `.agents/skills/`.
-
-## Verify
-
-In a new OpenCode session, load `swip` / `swip-commit` / `swip-sec`, or run the slash commands.
+OpenCode also discovers `.claude/skills/` and `.agents/skills/` — see [docs/agents.md](../docs/agents.md).

@@ -4,11 +4,12 @@
 
 [![Smoke](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml/badge.svg)](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/skills-3-informational.svg)](skills/)
+[![Agent Skills](https://img.shields.io/badge/Agent_Skills-portable-success.svg)](docs/agents.md)
 [![npx skills](https://img.shields.io/badge/npx_skills-gstbdstudio%2Fswip-black.svg)](https://github.com/gstbdstudio/swip)
 
-[Install](docs/install.md) · [Examples](examples/) · [Changelog](CHANGELOG.md) · [License](LICENSE)
+[Install](docs/install.md) · [Any agent](docs/agents.md) · [Examples](examples/) · [Changelog](CHANGELOG.md) · [License](LICENSE)
 
 ---
 
@@ -36,22 +37,36 @@
 
 ---
 
-## Quick start
+## Works with any Agent Skills-compatible agent
 
-**Universal (any agent):**
+SWIP is a portable **Agent Skills** pack (`skills/*/SKILL.md`). It is **not** locked to Claude Code, Cursor, or OpenCode.
+
+Install once into **every coding agent** the CLI detects on your machine:
 
 ```bash
-npx skills add gstbdstudio/swip -y
+npx skills add gstbdstudio/swip --all
 ```
 
-**Claude Code (plugin):**
+Or ask your current agent to run that command. Paths for Codex, Copilot, Gemini, Windsurf, Cline, Roo, Goose, Amp, and more: **[docs/agents.md](docs/agents.md)**.
+
+Optional nicer UX adapters also ship for Claude Code, Cursor, Codex, OpenCode, and shared `.agents/` marketplaces — same skills underneath.
+
+## Quick start
+
+```bash
+# All skills → all detected agents (recommended)
+npx skills add gstbdstudio/swip --all
+
+# Global
+npx skills add gstbdstudio/swip -g --all
+```
+
+**Optional Claude Code plugin UX:**
 
 ```text
 /plugin marketplace add gstbdstudio/swip
 /plugin install swip@swip
 ```
-
-**OpenCode:** [.opencode/INSTALL.md](.opencode/INSTALL.md)
 
 Then:
 
@@ -63,7 +78,7 @@ Then:
 | `/swip-sec` or `/swip-sec standard` | Fuller security assessment + `SECURITY-REPORT.md` |
 | `/swip-sec quick` | Fast security pass + `SECURITY-REPORT.md` |
 
-Full install paths: **[docs/install.md](docs/install.md)**.
+Install details: **[docs/install.md](docs/install.md)** · agent matrix: **[docs/agents.md](docs/agents.md)**.
 
 ---
 
@@ -134,26 +149,25 @@ See [examples/swip-sec.md](examples/swip-sec.md).
 
 ```
 swip/
-├── skills/
-│   ├── swip/SKILL.md
-│   ├── swip-commit/SKILL.md
+├── skills/                  # canonical skills (any Agent Skills agent)
+│   ├── swip/
+│   ├── swip-commit/
 │   └── swip-sec/
-│       ├── SKILL.md
-│       └── references/checklists.md
-├── .claude-plugin/          # Claude Code plugin + marketplace + icon
-├── .cursor-plugin/          # Cursor plugin manifest
-├── .opencode/INSTALL.md
+├── .claude-plugin/          # optional Claude Code adapter
+├── .cursor-plugin/          # optional Cursor adapter
+├── .codex-plugin/           # optional Codex adapter
+├── .agents/plugins/         # optional shared-agents marketplace
+├── .opencode/INSTALL.md     # OpenCode notes
+├── docs/
+│   ├── install.md           # universal install first
+│   └── agents.md            # multi-agent path matrix
 ├── .github/workflows/smoke.yml
 ├── scripts/smoke-test.sh
-├── docs/install.md
 ├── examples/
-├── package.json
-├── README.md
-├── LICENSE
-└── CHANGELOG.md
+└── package.json
 ```
 
-One skills tree, thin per-agent adapters, small CI smoke suite.
+One skills tree + thin optional adapters. Day-to-day install: `npx skills add gstbdstudio/swip --all`.
 
 ### Local smoke test
 

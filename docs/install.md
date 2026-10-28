@@ -10,91 +10,37 @@ Skills in this pack:
 | `swip-commit` | `/swip-commit` |
 | `swip-sec` | `/swip-sec`, `/swip-sec quick`, `/swip-sec standard` |
 
-Three good paths: **plugin install** (Claude / Cursor), **`npx skills`** (any agent), or **ask your agent**.
+SWIP follows the open **Agent Skills** standard. It is **not** locked to Claude Code, Cursor, or OpenCode.
+
+Full agent path table: **[agents.md](agents.md)**.
 
 ---
 
-## Claude Code (plugin)
+## 1) Universal install (recommended for every agent)
 
-Add this repo as a marketplace, then install the plugin:
-
-```text
-/plugin marketplace add gstbdstudio/swip
-/plugin install swip@swip
-```
-
-Or from a local checkout:
+Needs [Node.js](https://nodejs.org/). Uses the open-source [`skills`](https://github.com/vercel-labs/skills) CLI to wire this pack into **all agents it detects** on your machine.
 
 ```bash
-claude plugin marketplace add /path/to/swip
-# then in Claude Code:
-# /plugin install swip@swip
-```
+# Project — every skill → every detected agent
+npx skills add gstbdstudio/swip --all
 
-Validate a local checkout:
+# Global — available in all projects
+npx skills add gstbdstudio/swip -g --all
 
-```bash
-claude plugin validate /path/to/swip
-```
-
-After install, start a new session and run `/swip` (or `/swip:swip` depending on namespacing).
-
----
-
-## Cursor (plugin)
-
-If your Cursor build supports plugin install from a repo/marketplace entry that ships `.cursor-plugin/plugin.json`:
-
-- Add / install the **swip** plugin from [gstbdstudio/swip](https://github.com/gstbdstudio/swip), **or**
-- Fall back to `npx skills` below (always works)
-
-Cursor looks for skills under `.cursor/skills/` after a skills-CLI install, and under `./skills/` when loading this repo as a plugin (`"skills": "./skills/"` in `.cursor-plugin/plugin.json`).
-
----
-
-## OpenCode
-
-See **[.opencode/INSTALL.md](../.opencode/INSTALL.md)** — short version:
-
-```bash
-npx skills add gstbdstudio/swip --skill swip -a opencode -y
-```
-
-Or paste into OpenCode:
-
-```text
-Fetch and follow instructions from https://raw.githubusercontent.com/gstbdstudio/swip/refs/heads/main/.opencode/INSTALL.md
-```
-
----
-
-## Any agent — `npx skills` (recommended universal path)
-
-Needs Node.js. Works for Claude Code, Cursor, OpenCode, and more.
-
-```bash
-# Project install (both skills)
-npx skills add gstbdstudio/swip -y
-
-# Or pick one
-npx skills add gstbdstudio/swip --skill swip -y
-npx skills add gstbdstudio/swip --skill swip-commit -y
-npx skills add gstbdstudio/swip --skill swip-sec -y
-
-# Global install
-npx skills add gstbdstudio/swip -g -y
-
-# Specific agents
-npx skills add gstbdstudio/swip -a claude-code -a cursor -a opencode -y
-
-# All detected agents
+# Explicit equivalent
 npx skills add gstbdstudio/swip -a '*' -y
+```
+
+Install only one skill, still to all agents:
+
+```bash
+npx skills add gstbdstudio/swip --skill swip-sec -a '*' -y
 ```
 
 From a local clone:
 
 ```bash
-npx skills add /path/to/swip -y
+npx skills add /path/to/swip --all
 ```
 
 List skills in the source:
@@ -103,112 +49,123 @@ List skills in the source:
 npx skills add gstbdstudio/swip -l
 ```
 
-**ID:** `npx skills add gstbdstudio/swip -y` memasang seluruh pack. Tambah `-g` untuk global.
+**ID:** Cara paling portable: `npx skills add gstbdstudio/swip --all`. Itu memasang pack ke semua coding agent yang dikenali CLI di mesinmu.
 
 ---
 
-## Ask your AI agent
+## 2) Ask any AI agent to install it
 
-### English (any agent)
+Paste into **whatever** agent you use (Claude Code, Cursor, OpenCode, Codex, Copilot, Gemini, Windsurf, Cline, Roo, …):
+
+### English
 
 ```text
-Install the SWIP skill for me.
+Install the SWIP skill pack for every coding agent on this machine.
 
-Preferred methods (try in order):
-1. Claude Code: /plugin marketplace add gstbdstudio/swip then /plugin install swip@swip
-2. Any agent: npx skills add gstbdstudio/swip --skill swip -y
-   Target claude-code, cursor, and opencode. Use -g for global.
-3. Confirm the skill is visible, then tell me how to run /swip.
+Run:
+npx skills add gstbdstudio/swip --all
 
-If those fail, copy skills/swip/ so SKILL.md lands at the correct skills path for this agent.
+If --all is unavailable, use:
+npx skills add gstbdstudio/swip -a '*' -y
+
+Then confirm which agents received: swip, swip-commit, swip-sec,
+and tell me how to run /swip, /swip-commit, and /swip-sec.
+
+If the CLI cannot target my agent, copy skills/swip, skills/swip-commit,
+and skills/swip-sec into that agent's skills directory (see docs/agents.md).
 ```
 
 ### Indonesia
 
 ```text
-Tolong install skill SWIP untuk saya.
+Tolong install pack skill SWIP ke semua coding agent di mesin ini.
 
-Urutan yang diutamakan:
-1. Claude Code: /plugin marketplace add gstbdstudio/swip lalu /plugin install swip@swip
-2. Agent apa saja: npx skills add gstbdstudio/swip --skill swip -y
-   Pasang ke claude-code, cursor, dan opencode. Pakai -g kalau global.
-3. Pastikan skill kelihatan, lalu kasih tahu cara pakai /swip.
+Jalankan:
+npx skills add gstbdstudio/swip --all
 
-Kalau gagal, copy skills/swip/ ke path skills yang benar untuk agent ini.
-```
+Kalau --all tidak ada, pakai:
+npx skills add gstbdstudio/swip -a '*' -y
 
-### Shortcuts
+Lalu konfirmasi agent mana saja yang dapat: swip, swip-commit, swip-sec,
+dan kasih tahu cara menjalankan /swip, /swip-commit, dan /swip-sec.
 
-**Claude Code**
-
-```text
-Install SWIP as a Claude plugin:
-/plugin marketplace add gstbdstudio/swip
-/plugin install swip@swip
-Confirm /swip works in a new session.
-```
-
-**Cursor**
-
-```text
-Install skill SWIP with:
-npx skills add gstbdstudio/swip --skill swip -a cursor -y
-Confirm it lands in .cursor/skills/swip (or ~/.cursor/skills/swip with -g).
-```
-
-**OpenCode**
-
-```text
-Follow https://raw.githubusercontent.com/gstbdstudio/swip/refs/heads/main/.opencode/INSTALL.md
-and install SWIP for OpenCode. Then tell me how to run /swip.
+Kalau CLI tidak mengenal agent saya, copy skills/swip, skills/swip-commit,
+dan skills/swip-sec ke folder skills agent tersebut (lihat docs/agents.md).
 ```
 
 ---
 
-## Where each agent looks
+## 3) Optional: product-specific plugin UX
 
-| Agent | Project | Global |
-|-------|---------|--------|
-| **Claude Code** | `.claude/skills/swip/SKILL.md` (skills CLI) or plugin via marketplace | `~/.claude/skills/swip/SKILL.md` |
-| **Cursor** | `.cursor/skills/swip/SKILL.md` | `~/.cursor/skills/swip/SKILL.md` |
-| **OpenCode** | `.opencode/skills/swip/SKILL.md` (also `.claude/skills/`, `.agents/skills/`) | `~/.config/opencode/skills/swip/SKILL.md` |
+These are extras for nicer discovery. The universal CLI above already covers day-to-day use.
 
-Canonical sources in this repo:
+### Claude Code
+
+```text
+/plugin marketplace add gstbdstudio/swip
+/plugin install swip@swip
+```
+
+```bash
+claude plugin validate /path/to/swip
+```
+
+### Cursor
+
+Use `npx skills add gstbdstudio/swip --all`, or install via Cursor’s plugin flow if it picks up `.cursor-plugin/plugin.json`.
+
+### OpenCode
+
+See **[.opencode/INSTALL.md](../.opencode/INSTALL.md)** or:
+
+```bash
+npx skills add gstbdstudio/swip -a opencode -y
+```
+
+### Codex / shared agents
+
+```bash
+npx skills add gstbdstudio/swip -a '*' -y
+```
+
+This repo also ships `.codex-plugin/plugin.json` and `.agents/plugins/marketplace.json` for agents that read those manifests.
+
+---
+
+## 4) Manual copy (any agent)
+
+Copy each skill folder so `SKILL.md` is directly inside `<skills-root>/<name>/`:
+
+```bash
+SKILLS_ROOT="<your-agent-skills-root>"   # e.g. .agents/skills or .claude/skills
+mkdir -p "$SKILLS_ROOT"
+cp -r skills/swip skills/swip-commit skills/swip-sec "$SKILLS_ROOT/"
+```
+
+Prefer the shared location when your tools honor it:
+
+```bash
+mkdir -p .agents/skills
+cp -r skills/swip skills/swip-commit skills/swip-sec .agents/skills/
+```
+
+Symlink from a checkout:
+
+```bash
+mkdir -p ~/.agents/skills
+ln -s /path/to/swip/skills/swip ~/.agents/skills/swip
+ln -s /path/to/swip/skills/swip-commit ~/.agents/skills/swip-commit
+ln -s /path/to/swip/skills/swip-sec ~/.agents/skills/swip-sec
+```
+
+More paths: **[agents.md](agents.md)**.
+
+---
+
+## Canonical sources in this repo
 
 - `skills/swip/SKILL.md`
 - `skills/swip-commit/SKILL.md`
 - `skills/swip-sec/SKILL.md`
 
 After install, start a **new session** and run `/swip`, `/swip-commit`, or `/swip-sec`.
-
----
-
-## Manual copy (fallback)
-
-```bash
-# Claude Code (project) — copy whole skills tree
-mkdir -p .claude/skills
-cp -r <repo>/skills/swip <repo>/skills/swip-commit <repo>/skills/swip-sec .claude/skills/
-
-# Cursor (project)
-mkdir -p .cursor/skills
-cp -r <repo>/skills/swip <repo>/skills/swip-commit <repo>/skills/swip-sec .cursor/skills/
-
-# OpenCode (project)
-mkdir -p .opencode/skills
-cp -r <repo>/skills/swip <repo>/skills/swip-commit <repo>/skills/swip-sec .opencode/skills/
-```
-
-Symlink:
-
-```bash
-ln -s <repo>/skills/swip ~/.claude/skills/swip
-ln -s <repo>/skills/swip-commit ~/.claude/skills/swip-commit
-ln -s <repo>/skills/swip-sec ~/.claude/skills/swip-sec
-ln -s <repo>/skills/swip ~/.cursor/skills/swip
-ln -s <repo>/skills/swip-commit ~/.cursor/skills/swip-commit
-ln -s <repo>/skills/swip-sec ~/.cursor/skills/swip-sec
-ln -s <repo>/skills/swip ~/.config/opencode/skills/swip
-ln -s <repo>/skills/swip-commit ~/.config/opencode/skills/swip-commit
-ln -s <repo>/skills/swip-sec ~/.config/opencode/skills/swip-sec
-```

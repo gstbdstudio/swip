@@ -1,8 +1,8 @@
 {
   "name": "swip",
   "displayName": "SWIP \u2014 Shit With Prompting",
-  "version": "0.5.0",
-  "description": "Prompt rewrite (/swip), commit messages (/swip-commit), and security assessment (/swip-sec quick|standard) with SECURITY-REPORT.md.",
+  "version": "0.6.0",
+  "description": "Prompt rewrite (/swip), commit messages (/swip-commit), and security assessment (/swip-sec) for any Agent Skills-compatible coding agent.",
   "author": {
     "name": "gstbdstudio",
     "url": "https://github.com/gstbdstudio"
@@ -18,7 +18,9 @@
     "audit",
     "web",
     "mobile",
-    "owasp"
+    "owasp",
+    "agent-skills",
+    "multi-agent"
   ],
   "icon": "./.claude-plugin/icon.png"
 }

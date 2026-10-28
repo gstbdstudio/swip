@@ -1,6 +1,6 @@
 {
   "name": "swip",
-  "description": "SWIP \u2014 prompt rewrite, commit messages, and security assessment skills.",
+  "description": "SWIP \u2014 portable Agent Skills pack for any coding agent.",
   "owner": {
     "name": "gstbdstudio",
     "url": "https://github.com/gstbdstudio"
@@ -8,13 +8,14 @@
   "plugins": [
     {
       "name": "swip",
-      "description": "Prompt rewrite (/swip), commit messages (/swip-commit), and security assessment (/swip-sec).",
-      "version": "0.5.0",
+      "description": "Prompt rewrite (/swip), commit messages (/swip-commit), and security assessment (/swip-sec) for any Agent Skills-compatible coding agent.",
+      "version": "0.6.0",
       "source": "./",
       "author": {
         "name": "gstbdstudio",
         "url": "https://github.com/gstbdstudio"
       }
     }
-  ]
+  ],
+  "version": "0.6.0"
 }
