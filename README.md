@@ -2,7 +2,6 @@
 
 > I'm shit with prompting. This skill exists so I don't have to pretend otherwise.
 
-[![Smoke](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml/badge.svg)](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/skills-3-informational.svg)](skills/)
