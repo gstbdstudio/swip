@@ -112,13 +112,19 @@ else
 fi
 
 # Expected skills in this pack
-for expected in swip swip-commit; do
+for expected in swip swip-commit swip-sec; do
   if [[ -f "skills/$expected/SKILL.md" ]]; then
     ok "pack includes $expected"
   else
     bad "missing skills/$expected/SKILL.md"
   fi
 done
+
+if [[ -f skills/swip-sec/references/checklists.md ]]; then
+  ok "swip-sec checklist reference present"
+else
+  bad "missing skills/swip-sec/references/checklists.md"
+fi
 
 if command -v claude >/dev/null 2>&1; then
   if claude plugin validate "$ROOT" >/tmp/swip-plugin-validate.out 2>&1; then

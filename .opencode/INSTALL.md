@@ -1,6 +1,6 @@
 # Installing SWIP for OpenCode
 
-Skills: `/swip` (prompt rewrite) and `/swip-commit` (commit message from git diff).
+Skills: `/swip` (prompt rewrite), `/swip-commit` (commit message), `/swip-sec` (security assessment).
 
 ## Recommended — `npx skills`
 
@@ -14,7 +14,7 @@ Global:
 npx skills add gstbdstudio/swip -g -a opencode -y
 ```
 
-Restart OpenCode (or start a new session), then run `/swip` or `/swip-commit`.
+Restart OpenCode (or start a new session), then run `/swip`, `/swip-commit`, or `/swip-sec`.
 
 ## Ask OpenCode to install it
 
@@ -23,7 +23,7 @@ Paste:
 ```text
 Install the SWIP skill pack with:
 npx skills add gstbdstudio/swip -a opencode -y
-Then confirm OpenCode can see swip and swip-commit, and tell me how to run /swip and /swip-commit.
+Then confirm OpenCode can see swip, swip-commit, and swip-sec, and tell me how to run them.
 ```
 
 ## Manual copy
@@ -31,7 +31,7 @@ Then confirm OpenCode can see swip and swip-commit, and tell me how to run /swip
 ```bash
 mkdir -p .opencode/skills
 git clone https://github.com/gstbdstudio/swip.git /tmp/swip
-cp -r /tmp/swip/skills/swip /tmp/swip/skills/swip-commit .opencode/skills/
+cp -r /tmp/swip/skills/swip /tmp/swip/skills/swip-commit /tmp/swip/skills/swip-sec .opencode/skills/
 ```
 
 Or symlink if you develop locally:
@@ -40,10 +40,11 @@ Or symlink if you develop locally:
 mkdir -p .opencode/skills
 ln -s /path/to/swip/skills/swip .opencode/skills/swip
 ln -s /path/to/swip/skills/swip-commit .opencode/skills/swip-commit
+ln -s /path/to/swip/skills/swip-sec .opencode/skills/swip-sec
 ```
 
 OpenCode also discovers `.claude/skills/` and `.agents/skills/`.
 
 ## Verify
 
-In a new OpenCode session, load `swip` / `swip-commit`, or run `/swip` and `/swip-commit`.
+In a new OpenCode session, load `swip` / `swip-commit` / `swip-sec`, or run the slash commands.

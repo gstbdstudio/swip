@@ -1,8 +1,8 @@
 {
   "name": "swip",
-  "displayName": "SWIP — Shit With Prompting",
-  "description": "Prompt refactor (/swip) and commit-message drafts from git diffs (/swip-commit).",
-  "version": "0.3.0",
+  "displayName": "SWIP \u2014 Shit With Prompting",
+  "description": "Prompt rewrite (/swip), commit messages (/swip-commit), and security assessment (/swip-sec) for web and mobile projects.",
+  "version": "0.4.0",
   "author": {
     "name": "gstbdstudio",
     "url": "https://github.com/gstbdstudio"
@@ -13,11 +13,11 @@
   "keywords": [
     "skills",
     "prompting",
-    "prompt-engineering",
-    "act-as",
-    "rewrite",
     "commit",
-    "git"
+    "security",
+    "audit",
+    "web",
+    "mobile"
   ],
   "skills": "./skills/"
 }

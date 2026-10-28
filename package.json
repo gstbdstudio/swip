@@ -1,7 +1,7 @@
 {
   "name": "swip",
-  "version": "0.3.0",
-  "description": "SWIP — Shit With Prompting. Prompt refactor and git commit-message skills.",
+  "version": "0.4.0",
+  "description": "SWIP \u2014 Shit With Prompting. Prompt rewrite, commit messages, and security assessment skills.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,6 +13,8 @@
     "agent-skills",
     "prompting",
     "commit-message",
+    "security",
+    "audit",
     "claude-code",
     "cursor",
     "opencode"

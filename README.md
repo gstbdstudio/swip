@@ -4,8 +4,8 @@
 
 [![Smoke](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml/badge.svg)](https://github.com/gstbdstudio/swip/actions/workflows/smoke.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](CHANGELOG.md)
-[![Skills](https://img.shields.io/badge/skills-2-informational.svg)](skills/)
+[![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](CHANGELOG.md)
+[![Skills](https://img.shields.io/badge/skills-3-informational.svg)](skills/)
 [![npx skills](https://img.shields.io/badge/npx_skills-gstbdstudio%2Fswip-black.svg)](https://github.com/gstbdstudio/swip)
 
 [Install](docs/install.md) · [Examples](examples/) · [Changelog](CHANGELOG.md) · [License](LICENSE)
@@ -30,8 +30,9 @@
 |-------|---------|-----|
 | **swip** | `/swip` · `/swip light` · `/swip complex` | Rewrite messy prompts into Act-as briefs, confirm, then execute |
 | **swip-commit** | `/swip-commit` | Draft a commit message from current git changes (warns if no git) |
+| **swip-sec** | `/swip-sec` | Security assessment for web and/or mobile apps (checklist + prioritized fixes) |
 
-**ID:** Saya payah dan malas menyusun prompt — dan sering males nulis commit message juga. SWIP bantu dua-duanya.
+**ID:** Saya payah dan malas menyusun prompt — plus males nulis commit message dan males audit keamanan. SWIP bantu tiga-tiganya.
 
 ---
 
@@ -59,6 +60,7 @@ Then:
 | `/swip` or `/swip light` | Short prompt rewrite (default) |
 | `/swip complex` | Full detailed prompt rewrite |
 | `/swip-commit` | Commit message from current git diff |
+| `/swip-sec` | Security assessment (web + mobile auto-detect) |
 
 Full install paths: **[docs/install.md](docs/install.md)**.
 
@@ -106,13 +108,31 @@ See [examples/swip-commit.md](examples/swip-commit.md).
 
 ---
 
+## `/swip-sec` — security assessment
+
+Defensive review of the **current project** (web and/or mobile):
+
+1. Auto-detect stack and surfaces  
+2. Run practical checklists (auth, access control, secrets, mobile storage/TLS, …)  
+3. Report prioritized findings with evidence + remediation  
+4. Offer to fix **critical/high** only after you confirm  
+
+No live exploitation. Not a substitute for a full professional pentest.
+
+See [examples/swip-sec.md](examples/swip-sec.md).
+
+---
+
 ## Repo layout
 
 ```
 swip/
 ├── skills/
 │   ├── swip/SKILL.md
-│   └── swip-commit/SKILL.md
+│   ├── swip-commit/SKILL.md
+│   └── swip-sec/
+│       ├── SKILL.md
+│       └── references/checklists.md
 ├── .claude-plugin/          # Claude Code plugin + marketplace + icon
 ├── .cursor-plugin/          # Cursor plugin manifest
 ├── .opencode/INSTALL.md

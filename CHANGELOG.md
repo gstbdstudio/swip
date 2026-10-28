@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0 — 2026-03-26
+
+- Add **`swip-sec`** skill (`/swip-sec`): security assessment for web and/or mobile apps
+- Auto-detect stack, checklist review, prioritized findings + remediation
+- Offer high/critical fixes only after confirmation (no live exploitation)
+- Add `skills/swip-sec/references/checklists.md` and example
+
 ## 0.3.0 — 2026-03-26
 
 - Add **`swip-commit`** skill (`/swip-commit`): draft commit messages from current diffs

@@ -1,8 +1,8 @@
 {
   "name": "swip",
-  "displayName": "SWIP — Shit With Prompting",
-  "version": "0.3.0",
-  "description": "Prompt refactor (/swip) and commit-message drafts from git diffs (/swip-commit).",
+  "displayName": "SWIP \u2014 Shit With Prompting",
+  "version": "0.4.0",
+  "description": "Prompt rewrite (/swip), commit messages (/swip-commit), and security assessment (/swip-sec) for web and mobile projects.",
   "author": {
     "name": "gstbdstudio",
     "url": "https://github.com/gstbdstudio"
@@ -13,11 +13,12 @@
   "keywords": [
     "skills",
     "prompting",
-    "prompt-engineering",
-    "act-as",
-    "rewrite",
     "commit",
-    "git"
+    "security",
+    "audit",
+    "web",
+    "mobile",
+    "owasp"
   ],
   "icon": "./.claude-plugin/icon.png"
 }

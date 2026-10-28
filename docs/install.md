@@ -8,6 +8,7 @@ Skills in this pack:
 |-------|---------|
 | `swip` | `/swip`, `/swip light`, `/swip complex` |
 | `swip-commit` | `/swip-commit` |
+| `swip-sec` | `/swip-sec` |
 
 Three good paths: **plugin install** (Claude / Cursor), **`npx skills`** (any agent), or **ask your agent**.
 
@@ -78,6 +79,7 @@ npx skills add gstbdstudio/swip -y
 # Or pick one
 npx skills add gstbdstudio/swip --skill swip -y
 npx skills add gstbdstudio/swip --skill swip-commit -y
+npx skills add gstbdstudio/swip --skill swip-sec -y
 
 # Global install
 npx skills add gstbdstudio/swip -g -y
@@ -175,8 +177,9 @@ Canonical sources in this repo:
 
 - `skills/swip/SKILL.md`
 - `skills/swip-commit/SKILL.md`
+- `skills/swip-sec/SKILL.md`
 
-After install, start a **new session** and run `/swip` or `/swip-commit`.
+After install, start a **new session** and run `/swip`, `/swip-commit`, or `/swip-sec`.
 
 ---
 
@@ -185,15 +188,15 @@ After install, start a **new session** and run `/swip` or `/swip-commit`.
 ```bash
 # Claude Code (project) — copy whole skills tree
 mkdir -p .claude/skills
-cp -r <repo>/skills/swip <repo>/skills/swip-commit .claude/skills/
+cp -r <repo>/skills/swip <repo>/skills/swip-commit <repo>/skills/swip-sec .claude/skills/
 
 # Cursor (project)
 mkdir -p .cursor/skills
-cp -r <repo>/skills/swip <repo>/skills/swip-commit .cursor/skills/
+cp -r <repo>/skills/swip <repo>/skills/swip-commit <repo>/skills/swip-sec .cursor/skills/
 
 # OpenCode (project)
 mkdir -p .opencode/skills
-cp -r <repo>/skills/swip <repo>/skills/swip-commit .opencode/skills/
+cp -r <repo>/skills/swip <repo>/skills/swip-commit <repo>/skills/swip-sec .opencode/skills/
 ```
 
 Symlink:
@@ -201,8 +204,11 @@ Symlink:
 ```bash
 ln -s <repo>/skills/swip ~/.claude/skills/swip
 ln -s <repo>/skills/swip-commit ~/.claude/skills/swip-commit
+ln -s <repo>/skills/swip-sec ~/.claude/skills/swip-sec
 ln -s <repo>/skills/swip ~/.cursor/skills/swip
 ln -s <repo>/skills/swip-commit ~/.cursor/skills/swip-commit
+ln -s <repo>/skills/swip-sec ~/.cursor/skills/swip-sec
 ln -s <repo>/skills/swip ~/.config/opencode/skills/swip
 ln -s <repo>/skills/swip-commit ~/.config/opencode/skills/swip-commit
+ln -s <repo>/skills/swip-sec ~/.config/opencode/skills/swip-sec
 ```
