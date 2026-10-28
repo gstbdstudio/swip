@@ -26,20 +26,31 @@
 
 ## Quick start
 
+**Universal (any agent):**
+
 ```bash
 npx skills add gstbdstudio/swip --skill swip -y
 ```
 
-Then in your agent:
+**Claude Code (plugin):**
+
+```text
+/plugin marketplace add gstbdstudio/swip
+/plugin install swip@swip
+```
+
+**OpenCode:** follow [.opencode/INSTALL.md](.opencode/INSTALL.md) or paste that URL into the agent.
+
+Then:
 
 | Command | What you get |
 |---------|----------------|
 | `/swip` or `/swip light` | Short rewrite (default) |
 | `/swip complex` | Full detailed rewrite |
 
-Or paste: “rewrite my prompt” / “rapihkan promptku” / “I’m shit with prompting”.
+Or say: “rewrite my prompt” / “rapihkan promptku” / “I’m shit with prompting”.
 
-Full install (Claude Code, Cursor, OpenCode, agent prompts, manual paths): **[docs/install.md](docs/install.md)**.
+Full paths for Claude Code, Cursor, OpenCode, agent prompts, manual copy: **[docs/install.md](docs/install.md)**.
 
 ---
 
@@ -106,7 +117,7 @@ benerin authnya yang sering error pas login, jangan rusak yang lain
 - Adjacent auth flows still work
 ```
 
-More detail: [examples/light.md](examples/light.md) · [examples/complex.md](examples/complex.md)
+More: [examples/light.md](examples/light.md) · [examples/complex.md](examples/complex.md)
 
 ---
 
@@ -114,16 +125,19 @@ More detail: [examples/light.md](examples/light.md) · [examples/complex.md](exa
 
 ```
 swip/
-├── SKILL.md           # the skill (what agents load)
-├── README.md          # you are here
-├── LICENSE            # MIT
-├── CHANGELOG.md
-├── docs/
-│   └── install.md     # install for Claude Code / Cursor / OpenCode
-└── examples/
-    ├── light.md
-    └── complex.md
+├── skills/swip/SKILL.md     # canonical skill (agents load this)
+├── .claude-plugin/          # Claude Code plugin + marketplace
+├── .cursor-plugin/          # Cursor plugin manifest
+├── .opencode/INSTALL.md     # OpenCode install notes
+├── docs/install.md
+├── examples/
+├── package.json
+├── README.md
+├── LICENSE
+└── CHANGELOG.md
 ```
+
+Same idea as larger skill frameworks: **one skills tree**, thin per-agent adapters.
 
 ---
 

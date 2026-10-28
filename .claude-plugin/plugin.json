@@ -1,0 +1,21 @@
+{
+  "name": "swip",
+  "displayName": "SWIP \u2014 Shit With Prompting",
+  "version": "0.2.0",
+  "description": "Refactor messy prompts into clean Act-as role briefs, confirm, then execute. Modes: light and complex.",
+  "author": {
+    "name": "gstbdstudio",
+    "url": "https://github.com/gstbdstudio"
+  },
+  "homepage": "https://github.com/gstbdstudio/swip",
+  "repository": "https://github.com/gstbdstudio/swip",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "prompting",
+    "prompt-engineering",
+    "act-as",
+    "rewrite"
+  ],
+  "icon": "./.claude-plugin/icon.png"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "swip",
+  "description": "SWIP — Shit With Prompting. One skill that rewrites messy prompts into role-based briefs.",
+  "owner": {
+    "name": "gstbdstudio",
+    "url": "https://github.com/gstbdstudio"
+  },
+  "plugins": [
+    {
+      "name": "swip",
+      "description": "Refactor messy prompts into clean Act-as role briefs, confirm, then execute.",
+      "version": "0.2.0",
+      "source": "./",
+      "author": {
+        "name": "gstbdstudio",
+        "url": "https://github.com/gstbdstudio"
+      }
+    }
+  ]
+}

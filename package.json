@@ -1,0 +1,30 @@
+{
+  "name": "swip",
+  "version": "0.2.0",
+  "description": "SWIP — Shit With Prompting. Refactor messy prompts into Act-as role briefs.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gstbdstudio/swip.git"
+  },
+  "homepage": "https://github.com/gstbdstudio/swip",
+  "keywords": [
+    "skills",
+    "agent-skills",
+    "prompting",
+    "claude-code",
+    "cursor",
+    "opencode"
+  ],
+  "files": [
+    "skills/",
+    ".claude-plugin/",
+    ".cursor-plugin/",
+    ".opencode/",
+    "docs/",
+    "examples/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ]
+}
