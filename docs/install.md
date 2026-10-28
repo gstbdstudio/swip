@@ -12,7 +12,8 @@ Skills in this pack:
 
 SWIP follows the open **Agent Skills** standard. It is **not** locked to Claude Code, Cursor, or OpenCode.
 
-Full agent path table: **[agents.md](agents.md)**.
+Full agent path table: **[agents.md](agents.md)**.  
+Trust / verification: **[security.md](security.md)**.
 
 ---
 

@@ -7,6 +7,7 @@
 - Add `docs/agents.md` with multi-agent skills path matrix
 - Add thin `.codex-plugin/` and `.agents/plugins/` adapters
 - Rewrite `docs/install.md` with universal-first flow + any-agent install prompts
+- Add **Security & trust** docs (`docs/security.md` + README section)
 
 ## 0.5.0 — 2026-03-26
 
