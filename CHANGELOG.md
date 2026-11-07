@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0 — 2026-11-07
+
+- Add `/swip-goodbrief`: build a specifics-rich brief, optionally for a chosen skill (or no skill)
+
 ## 0.6.0 — 2026-03-26
 
 - Position SWIP as **portable Agent Skills** for any compatible coding agent (not only Claude/Cursor/OpenCode)

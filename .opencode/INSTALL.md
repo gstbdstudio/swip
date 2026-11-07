@@ -20,14 +20,14 @@ Global:
 npx skills add gstbdstudio/swip -g --all
 ```
 
-Restart OpenCode (new session), then run `/swip`, `/swip-commit`, or `/swip-sec`.
+Restart OpenCode (new session), then run `/swip`, `/swip-commit`, `/swip-goodbrief`, or `/swip-sec`.
 
 ## Ask OpenCode to install it
 
 ```text
 Install the SWIP skill pack for every coding agent on this machine with:
 npx skills add gstbdstudio/swip --all
-Confirm OpenCode can see swip, swip-commit, and swip-sec.
+Confirm OpenCode can see swip, swip-commit, swip-goodbrief, and swip-sec.
 ```
 
 ## Manual copy
@@ -35,7 +35,7 @@ Confirm OpenCode can see swip, swip-commit, and swip-sec.
 ```bash
 mkdir -p .opencode/skills
 git clone https://github.com/gstbdstudio/swip.git /tmp/swip
-cp -r /tmp/swip/skills/swip /tmp/swip/skills/swip-commit /tmp/swip/skills/swip-sec .opencode/skills/
+cp -r /tmp/swip/skills/swip /tmp/swip/skills/swip-commit /tmp/swip/skills/swip-goodbrief /tmp/swip/skills/swip-sec .opencode/skills/
 ```
 
 OpenCode also discovers `.claude/skills/` and `.agents/skills/` — see [docs/agents.md](../docs/agents.md).

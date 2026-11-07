@@ -7,6 +7,7 @@ Skills in this pack:
 | Skill | Command |
 |-------|---------|
 | `swip` | `/swip`, `/swip light`, `/swip complex` |
+| `swip-goodbrief` | `/swip-goodbrief` |
 | `swip-commit` | `/swip-commit` |
 | `swip-sec` | `/swip-sec`, `/swip-sec quick`, `/swip-sec standard` |
 
@@ -69,10 +70,10 @@ npx skills add gstbdstudio/swip --all
 If --all is unavailable, use:
 npx skills add gstbdstudio/swip -a '*' -y
 
-Then confirm which agents received: swip, swip-commit, swip-sec,
-and tell me how to run /swip, /swip-commit, and /swip-sec.
+Then confirm which agents received: swip, swip-commit, swip-goodbrief, swip-sec,
+and tell me how to run /swip, /swip-commit, /swip-goodbrief, and /swip-sec.
 
-If the CLI cannot target my agent, copy skills/swip, skills/swip-commit,
+If the CLI cannot target my agent, copy skills/swip, skills/swip-commit, skills/swip-goodbrief,
 and skills/swip-sec into that agent's skills directory (see docs/agents.md).
 ```
 
@@ -87,10 +88,10 @@ npx skills add gstbdstudio/swip --all
 Kalau --all tidak ada, pakai:
 npx skills add gstbdstudio/swip -a '*' -y
 
-Lalu konfirmasi agent mana saja yang dapat: swip, swip-commit, swip-sec,
-dan kasih tahu cara menjalankan /swip, /swip-commit, dan /swip-sec.
+Lalu konfirmasi agent mana saja yang dapat: swip, swip-commit, swip-goodbrief, swip-sec,
+dan kasih tahu cara menjalankan /swip, /swip-commit, /swip-goodbrief, dan /swip-sec.
 
-Kalau CLI tidak mengenal agent gue, copy skills/swip, skills/swip-commit,
+Kalau CLI tidak mengenal agent gue, copy skills/swip, skills/swip-commit, skills/swip-goodbrief,
 dan skills/swip-sec ke folder skills agent tersebut (lihat docs/agents.md).
 ```
 
@@ -140,14 +141,14 @@ Copy each skill folder so `SKILL.md` is directly inside `<skills-root>/<name>/`:
 ```bash
 SKILLS_ROOT="<your-agent-skills-root>"   # e.g. .agents/skills or .claude/skills
 mkdir -p "$SKILLS_ROOT"
-cp -r skills/swip skills/swip-commit skills/swip-sec "$SKILLS_ROOT/"
+cp -r skills/swip skills/swip-commit skills/swip-goodbrief skills/swip-sec "$SKILLS_ROOT/"
 ```
 
 Prefer the shared location when your tools honor it:
 
 ```bash
 mkdir -p .agents/skills
-cp -r skills/swip skills/swip-commit skills/swip-sec .agents/skills/
+cp -r skills/swip skills/swip-commit skills/swip-goodbrief skills/swip-sec .agents/skills/
 ```
 
 Symlink from a checkout:
@@ -156,6 +157,7 @@ Symlink from a checkout:
 mkdir -p ~/.agents/skills
 ln -s /path/to/swip/skills/swip ~/.agents/skills/swip
 ln -s /path/to/swip/skills/swip-commit ~/.agents/skills/swip-commit
+ln -s /path/to/swip/skills/swip-goodbrief ~/.agents/skills/swip-goodbrief
 ln -s /path/to/swip/skills/swip-sec ~/.agents/skills/swip-sec
 ```
 
@@ -167,6 +169,7 @@ More paths: **[agents.md](agents.md)**.
 
 - `skills/swip/SKILL.md`
 - `skills/swip-commit/SKILL.md`
+- `skills/swip-goodbrief/SKILL.md`
 - `skills/swip-sec/SKILL.md`
 
-After install, start a **new session** and run `/swip`, `/swip-commit`, or `/swip-sec`.
+After install, start a **new session** and run `/swip`, `/swip-commit`, `/swip-goodbrief`, or `/swip-sec`.

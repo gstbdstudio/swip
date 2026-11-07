@@ -1,6 +1,6 @@
 {
   "name": "swip",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "SWIP — prompt rewrite, commit messages, and security assessment for any Agent Skills-compatible coding agent.",
   "author": {
     "name": "gstbdstudio",
@@ -20,13 +20,14 @@
   "hooks": {},
   "interface": {
     "displayName": "SWIP — Shit With Prompting",
-    "shortDescription": "Prompt rewrite, commit messages, and security assessment skills",
-    "longDescription": "Use SWIP to rewrite messy prompts into Act-as briefs (/swip), draft commit messages from git diffs (/swip-commit), and run defensive web/mobile security assessments (/swip-sec).",
+    "shortDescription": "Prompt rewrite, good briefs, commit messages, and security assessment skills",
+    "longDescription": "Use SWIP to rewrite messy prompts into Act-as briefs (/swip), build specifics-rich briefs for any skill (/swip-goodbrief), draft commit messages from git diffs (/swip-commit), and run defensive web/mobile security assessments (/swip-sec).",
     "developerName": "gstbdstudio",
     "category": "Developer Tools",
     "capabilities": ["Interactive", "Read", "Write"],
     "defaultPrompt": [
       "/swip",
+      "/swip-goodbrief",
       "/swip-commit",
       "/swip-sec quick"
     ],

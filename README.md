@@ -3,8 +3,8 @@
 > I'm shit with prompting. This skill exists so I don't have to pretend otherwise.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](CHANGELOG.md)
-[![Skills](https://img.shields.io/badge/skills-3-informational.svg)](skills/)
+[![Version](https://img.shields.io/badge/version-0.7.0-blue.svg)](CHANGELOG.md)
+[![Skills](https://img.shields.io/badge/skills-4-informational.svg)](skills/)
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-portable-success.svg)](docs/agents.md)
 [![npx skills](https://img.shields.io/badge/npx_skills-gstbdstudio%2Fswip-black.svg)](https://github.com/gstbdstudio/swip)
 
@@ -30,6 +30,7 @@
 |-------|---------|-----|
 | **swip** | `/swip` · `/swip light` · `/swip complex` | Rewrite messy prompts into Act-as briefs, confirm, then execute |
 | **swip-commit** | `/swip-commit` | Draft a commit message from current git changes (warns if no git) |
+| **swip-goodbrief** | `/swip-goodbrief` | Turn a thin request into a specifics-rich brief, optionally for a chosen skill (or none) |
 | **swip-sec** | `/swip-sec` · `/swip-sec quick` · `/swip-sec standard` | Security assessment for web/mobile; writes `SECURITY-REPORT.md` |
 
 **ID:** Gue payah dan malas menyusun prompt — plus males nulis commit message dan males audit keamanan. SWIP bantu tiga-tiganya.
@@ -123,6 +124,22 @@ See [examples/swip-commit.md](examples/swip-commit.md).
 
 ---
 
+## `/swip-goodbrief` — good brief for any skill
+
+`/swip` fixes structure. `/swip-goodbrief` fixes **content**: a good brief holds 8–12 facts only you have (name, place, numbers, constraints, rituals, assets, the one action).
+
+1. Asks which skill you'll use (or pick **No skill**)  
+2. Reads that skill to see what it needs  
+3. Asks only for missing facts (max 5, never invents)  
+4. Shows the brief → confirm → runs it  
+
+**Thin:** `Make a modern, premium landing page for my bakery.`  
+**Good:** `Use the design-taste-frontend skill to build the landing page for Sete Portas… 14 seats… oven lit at five… photos in ./photos… pre-order by email.`
+
+See [examples/swip-goodbrief.md](examples/swip-goodbrief.md).
+
+---
+
 ## `/swip-sec` — security assessment
 
 Defensive review of the **current project** (web and/or mobile):
@@ -151,6 +168,7 @@ swip/
 ├── skills/                  # canonical skills (any Agent Skills agent)
 │   ├── swip/
 │   ├── swip-commit/
+│   ├── swip-goodbrief/
 │   └── swip-sec/
 ├── .claude-plugin/          # optional Claude Code adapter
 ├── .cursor-plugin/          # optional Cursor adapter

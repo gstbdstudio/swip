@@ -27,7 +27,7 @@ npx skills list --json
 
 ## Common skills directories
 
-Exact folders vary by agent version. The CLI places files correctly when you pass `-a` / `--all`. For manual installs, copy each of `skills/swip`, `skills/swip-commit`, and `skills/swip-sec` into the agent’s skills root so that `SKILL.md` sits at:
+Exact folders vary by agent version. The CLI places files correctly when you pass `-a` / `--all`. For manual installs, copy each of `skills/swip`, `skills/swip-commit`, `skills/swip-goodbrief`, and `skills/swip-sec` into the agent’s skills root so that `SKILL.md` sits at:
 
 `<skills-root>/<skill-name>/SKILL.md`
 
@@ -76,4 +76,4 @@ These help specific products discover SWIP as a plugin/marketplace. They are **a
 
 ## After install
 
-Start a **new session** in your agent, then run `/swip`, `/swip-commit`, or `/swip-sec` (or ask in natural language: “rapihkan prompt”, “bikin commit message”, “cek keamanan”).
+Start a **new session** in your agent, then run `/swip`, `/swip-commit`, `/swip-goodbrief`, or `/swip-sec` (or ask in natural language: “rapihkan prompt”, “bikin good brief”, “bikin commit message”, “cek keamanan”).

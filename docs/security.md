@@ -28,6 +28,7 @@ SWIP’s published skills ask for confirmation before commits and code fixes. A 
 2. Open and skim:
    - `skills/swip/SKILL.md`
    - `skills/swip-commit/SKILL.md`
+   - `skills/swip-goodbrief/SKILL.md`
    - `skills/swip-sec/SKILL.md`
 3. Reject unexpected asks: send secrets outbound, `curl | bash`, force-push, commit without asking, disable safety checks
 4. Prefer reviewing the diff when you run `npx skills update` (or re-install)
@@ -42,7 +43,7 @@ bash scripts/smoke-test.sh
 
 - Install only from the official source above
 - Limit agent access to production secrets / cloud credentials when you can
-- Watch tool calls the first times you use `/swip`, `/swip-commit`, `/swip-sec`
+- Watch tool calls the first times you use `/swip`, `/swip-commit`, `/swip-goodbrief`, `/swip-sec`
 - Add `SECURITY-REPORT.md` to `.gitignore` if that file must stay private
 - Pin or avoid blind auto-updates if your threat model is strict
 

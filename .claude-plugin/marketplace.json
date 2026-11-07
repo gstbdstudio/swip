@@ -8,8 +8,8 @@
   "plugins": [
     {
       "name": "swip",
-      "description": "Prompt rewrite (/swip), commit messages (/swip-commit), and security assessment (/swip-sec) for any Agent Skills-compatible coding agent.",
-      "version": "0.6.0",
+      "description": "Prompt rewrite (/swip), good briefs (/swip-goodbrief), commit messages (/swip-commit), and security assessment (/swip-sec) for any Agent Skills-compatible coding agent.",
+      "version": "0.7.0",
       "source": "./",
       "author": {
         "name": "gstbdstudio",
@@ -17,5 +17,5 @@
       }
     }
   ],
-  "version": "0.6.0"
+  "version": "0.7.0"
 }

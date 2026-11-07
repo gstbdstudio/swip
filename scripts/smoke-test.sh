@@ -125,7 +125,7 @@ else
 fi
 
 # Expected skills in this pack
-for expected in swip swip-commit swip-sec; do
+for expected in swip swip-commit swip-goodbrief swip-sec; do
   if [[ -f "skills/$expected/SKILL.md" ]]; then
     ok "pack includes $expected"
   else
