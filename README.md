@@ -217,4 +217,4 @@ Full notes: **[docs/security.md](docs/security.md)**.
 
 ## License
 
-[MIT](LICENSE). Do whatever you want with it. If it helps another lazy prompter, that is enough.
+[GPL-3.0](LICENSE). If it helps another lazy prompter, that is enough.

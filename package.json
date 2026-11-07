@@ -2,7 +2,7 @@
   "name": "swip",
   "version": "0.7.0",
   "description": "SWIP \u2014 Shit With Prompting. Portable Agent Skills for any coding agent.",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gstbdstudio/swip.git"
